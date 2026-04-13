@@ -29,7 +29,7 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div className="footer-contact">
-                        <h2>Get in Touch</h2>
+                        <h3>Get in Touch</h3>
                         <a href="mailto:support@loanaptech.com">support@loanaptech.com</a>
                         <a href="tel:+15551234567">+1(555) 123-4567</a>
                         <p>Mon-Fri: 9AM-6PM EST</p>
