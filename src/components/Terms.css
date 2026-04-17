@@ -1,0 +1,55 @@
+.terms-page {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 100px 20px 80px;
+}
+
+.terms-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 50px 60px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.terms-container h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.update-date {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+  margin-bottom: 50px;
+}
+
+.terms-content section {
+  margin-bottom: 40px;
+}
+
+.terms-content h2 {
+  font-size: 1.5rem;
+  color: #1e40af;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.terms-content p {
+  color: #4b5563;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .terms-container {
+    padding: 40px 20px;
+  }
+  .terms-container h1 {
+    font-size: 2.3rem;
+  }
+}

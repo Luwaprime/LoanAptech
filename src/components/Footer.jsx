@@ -13,19 +13,19 @@ export default function Footer() {
                     <div className="footer-links">
                         <h3>Quick Links</h3>
                         <ul>
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="loans.html">Loan Products</a></li>
-                        <li><a href="apply.html">Apply Now</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="/Home">Home</a></li>
+                        <li><a href="/Loans">Loan Products</a></li>
+                        <li><a href="/Apply">Apply Now</a></li>
+                        <li><a href="/about">About Us</a></li>
                         </ul>
                     </div>
                     <div className="footer-links">
                         <h3>Support</h3>
                         <ul>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
                         <li><a href="#">Faq</a></li>
                         <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="/terms">Terms of service</a></li>
                         </ul>
                     </div>
                     <div className="footer-contact">
