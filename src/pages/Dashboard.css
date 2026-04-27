@@ -1,0 +1,10 @@
+.dashboard-page {
+    background-color: blue;
+    height: 500px;
+}
+.dashboard-page h1 {
+    display: flex;
+    color: white;
+    justify-content: center;
+    margin: 70px
+}
