@@ -7,7 +7,7 @@ import Terms from './components/Terms';
 import Faq from './components/Faq';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
-import Signup from './components/signup';
+import Signup from './components/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 
