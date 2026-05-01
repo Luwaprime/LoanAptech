@@ -16,7 +16,7 @@ export default function Footer() {
                         <ul>
                         <li><Link to="/home">Home</Link></li>
                         <li><Link to="/loans">Loan Products</Link></li>
-                        <li><Link to="/apply">Apply Now</Link></li>
+                        <li><Link to="/applyloan">Apply Now</Link></li>
                         <li><Link to="/about">About Us</Link></li>
                         </ul>
                     </div>

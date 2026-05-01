@@ -8,7 +8,7 @@ export default function Home () {
             <div className='hero-section'>
                <h1 className='hero-title'>Welcome to LoanAptech</h1>
                <p className='hero-subtitle'>Get instant personal loans up to $50,000 with low interest rates and flexible repayment options</p>
-               <Link to="/apply" className='hero-cta-btn'>Apply now, its free</Link>    
+               <Link to="/applyloan" className='hero-cta-btn'>Apply now, its free</Link>    
             </div>
             <div className='features-grid'>
                  <div className='feature-card'>
