@@ -21,7 +21,7 @@ const Dashboard = () => {
       setError("");
 
       // Fetch current user
-      const userResponse = await fetch("http://localhost:5000/api/auth/me", {
+      const userResponse = await fetch("https://loanaptech-sltw.onrender.com/api/auth/me", {
         credentials: "include"
       });
 
@@ -33,7 +33,7 @@ const Dashboard = () => {
       setUser(userData.user);
 
       // Fetch dashboard stats
-      const statsResponse = await fetch("http://localhost:5000/api/loans/dashboard/stats", {
+      const statsResponse = await fetch("https://loanaptech-sltw.onrender.com/api/loans/dashboard/stats", {
         credentials: "include"
       });
 
@@ -43,7 +43,7 @@ const Dashboard = () => {
       }
 
       // Fetch my loans
-      const loansResponse = await fetch("http://localhost:5000/api/loans/my-loans", {
+      const loansResponse = await fetch("https://loanaptech-sltw.onrender.com/api/loans/my-loans", {
         credentials: "include"
       });
 
