@@ -48,6 +48,8 @@ const Login = () => {
         throw new Error(data.error || "Login failed");
       }
 
+      localStorage.setItem("user", JSON.stringify(data.user));
+
       alert("Logged in!.");
       navigate("/dashboard");
     } catch (err) {
