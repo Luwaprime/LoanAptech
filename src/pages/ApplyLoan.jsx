@@ -35,7 +35,7 @@ const ApplyLoan = () => {
         setLoading(true);
 
     try {
-      const response = await fetch("https://loanaptech-sltw.onrender.com/api/auth/apply-loan", {
+      const response = await fetch("https://loanaptech-sltw.onrender.com/api/loans/apply", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
