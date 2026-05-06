@@ -75,7 +75,7 @@ const Dashboard = () => {
   };
 
   const handleApplyLoan = () => {
-    navigate("/apply-loan");
+    navigate("/applyloan");
   };
 
   if (loading) {
