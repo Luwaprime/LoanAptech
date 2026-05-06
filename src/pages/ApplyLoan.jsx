@@ -26,7 +26,7 @@ const ApplyLoan = () => {
         e.preventDefault();
         setError("");
 
-        if (!formData.name || !formData.email || !formData.loanAmount || !formData.loanTenure || !formData.purposeLoan) {
+        if (!formData.name.trim() || !formData.email.trim() || formData.loanAmount === "" || !formData.loanTenure.trim() || !formData.purposeLoan.trim()) {
           setError("Please fill in all fields");
           return;
         }
