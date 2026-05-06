@@ -8,9 +8,10 @@ const ApplyLoan = () => {
       const [formData, setFormData] = useState({
         name: "",
         email: "",
-        loanAmount: "",
-        loanTenure: "",
-        purposeLoan: ""
+        amount: "",
+        tenure: "",
+        purpose: "",
+        interestRate: ""
       });
       const [error, setError] = useState("");
       const [loading, setLoading] = useState(false);
@@ -26,11 +27,11 @@ const ApplyLoan = () => {
         e.preventDefault();
         setError("");
 
-        if (!formData.name.trim() || !formData.email.trim() || formData.loanAmount === "" || !formData.loanTenure.trim() || !formData.purposeLoan.trim()) {
+        if (!formData.name.trim() || !formData.email.trim() || formData.amount === "" || !formData.tenure.trim() || !formData.purpose.trim() || formData.interestRate === "") {
           setError("Please fill in all fields");
           return;
         }
-
+          
 
         setLoading(true);
 
@@ -42,11 +43,10 @@ const ApplyLoan = () => {
         },
         credentials: "include",
         body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          loanAmount: formData.loanAmount,
-          loanTenure: formData.loanTenure,
-          purposeLoan: formData.purposeLoan
+          amount: formData.amount,
+          purpose: formData.purpose,
+          duration: formData.tenure,
+          interestRate: formData.interestRate
         })
       });
 
@@ -100,33 +100,45 @@ const ApplyLoan = () => {
             <label>Loan Amount</label>
             <input
               type="number"
-              name="loanAmount"
+              name="amount"
               placeholder="Enter amount"
-              value={formData.loanAmount}
+              value={formData.amount}
               onChange={handleChange}
             />
           </div>
 
           <div className="input-group">
-             <label>Loan Tenure Type</label>
+            <label>Interest Rate (%)</label>
+            <input
+              type="number"
+              name="interestRate"
+              placeholder="Enter interest rate"
+              value={formData.interestRate}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="input-group">
+             <label>Loan Tenure (months)</label>
              <select
-               name="loanTenure"
-               value={formData.loanTenure}
+               name="tenure"
+               value={formData.tenure}
                onChange={handleChange}
             >   
-             <option value="">Select tenure type</option>
-            <option value="annual">Annual</option>
-            <option value="semiannual">Semiannual (Every 6 months)</option>
-            <option value="quarterly">Quarterly (Every 3 months)</option>
+             <option value="">Select tenure</option>
+            <option value="12">12 months</option>
+            <option value="24">24 months</option>
+            <option value="36">36 months</option>
+            <option value="60">60 months</option>
             </select>
          </div>
 
           <div className="input-group">
             <label>Purpose of Loan</label>
             <textarea
-              name="purposeLoan"
+              name="purpose"
               placeholder="Why do you need this loan?"
-              value={formData.purposeLoan}
+              value={formData.purpose}
               onChange={handleChange}
             />
           </div>

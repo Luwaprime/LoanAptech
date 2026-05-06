@@ -85,7 +85,7 @@ function Navbar() {
           {/* Logged-in only */}
           {user && (
             <li>
-              <Link to="/apply" className={isActive("/apply") ? "nav-link active" : "nav-link"}>
+              <Link to="/applyloan" className={isActive("/applyloan") ? "nav-link active" : "nav-link"}>
                 Apply Now
               </Link>
             </li>
