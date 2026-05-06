@@ -22,6 +22,18 @@ const ApplyLoan = () => {
           [e.target.name]: e.target.value
         });
       };
+
+      const fetchWithRetry = async (url, options, retries = 2, delay = 2000) => {
+        try {
+          return await fetch(url, options);
+        } catch (err) {
+          if (retries > 0 && err.message === 'Failed to fetch') {
+            await new Promise((resolve) => setTimeout(resolve, delay));
+            return fetchWithRetry(url, options, retries - 1, delay);
+          }
+          throw err;
+        }
+      };
     
       const handleSubmit = async (e) => {
         e.preventDefault();
@@ -36,7 +48,7 @@ const ApplyLoan = () => {
         setLoading(true);
 
     try {
-      const response = await fetch("https://loanaptech-sltw.onrender.com/api/loans/apply", {
+      const response = await fetchWithRetry("https://loanaptech-sltw.onrender.com/api/loans/apply", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -60,7 +72,11 @@ const ApplyLoan = () => {
 
       navigate("/loans");
     } catch (err) {
-      setError(err.message);
+      if (err.message === 'Failed to fetch') {
+        setError('Network error: backend currently unavailable or request blocked. Try again in a moment.');
+      } else {
+        setError(err.message);
+      }
     } finally {
       setLoading(false);
     }
