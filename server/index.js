@@ -6,34 +6,28 @@ const connectDB = require('./config/db');
 
 const app = express();
 
-const startServer = async () => {
-  await connectDB();
+connectDB();
 
-  // Middleware
-  app.use(cors({
-    origin: [ 'http://localhost:5173',
-             'https://loan-aptech-roan.vercel.app' ],
+// Middleware
+app.use(cors({
+  origin: [ 'http://localhost:5173',
+           'https://loan-aptech-roan.vercel.app' ],
 
-    credentials: true 
-  }));
-  app.use(express.json());
-  app.use(cookieParser()); 
+  credentials: true 
+}));
+app.use(express.json());
+app.use(cookieParser()); 
 
-  // Routes
-  app.use('/api/auth', require('./routes/auth'));
-  app.use('/api/loans', require('./routes/loans'));
+// Routes
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/loans', require('./routes/loans'));
 
-  // Test route
-  app.get('/api/test', (req, res) => {
-    res.json({ message: 'API is working!' });
-  });
+// Test route
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'API is working!' });
+});
 
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => {
-    console.log(` Server running on port ${PORT}`);
-  });
-};
-
-startServer().catch((error) => {
-  console.error('Failed to start server:', error);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(` Server running on port ${PORT}`);
 });

@@ -65,7 +65,7 @@ function Navbar() {
           </li>
 
           <li>
-            <Link to="/loans" className={isActive("/loans") ? "nav-link active" : "nav-link"}>
+            <Link to="/loan/:id" className={isActive("/loan/:id") ? "nav-link active" : "nav-link"}>
               Loans
             </Link>
           </li>
